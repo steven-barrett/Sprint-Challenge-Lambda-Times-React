@@ -76,7 +76,17 @@ const SpanCRight = styled.span`
 cursor: pointer;
 `;
 
-const TopBar = () => {
+class TopBar extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      logOut: false
+    }
+  }
+  logOut = () => { 
+    this.props.logOut();
+  }
+  render () {
   return (
     <DivTopBar>
       <DivContainer>
@@ -87,11 +97,12 @@ const TopBar = () => {
           <SpanCenter>GENERAL</SpanCenter><SpanCenter>BROWNBAG</SpanCenter><SpanCenter>RANDOM</SpanCenter><SpanCenter>MUSIC</SpanCenter><SpanCenterLast>ANNOUNCEMENTS</SpanCenterLast>
         </DivCCenter>
         <DivCRight>
-          <SpanCRight>LOG IN</SpanCRight>
+          <SpanCRight onClick={this.logOut}>LOG OUT</SpanCRight>
         </DivCRight>
       </DivContainer>
     </DivTopBar>
   )
+}
 }
 
 export default TopBar;
