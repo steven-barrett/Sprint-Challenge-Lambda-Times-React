@@ -12,7 +12,7 @@ const Tabs = props => {
             give the tab component a `selectTabHandler`, the `selectedTab`, and the `tab` itself as props*/}
         {props.tabs.map(tab => {
             return (
-              <Tab selectedTab={tab.selectedTab} selectTabHandler={tab.selectTabHandler} thisTab={tab} />
+              <Tab selectedTab={tab.selectedTab} selectTabHandler={props.selectTabHandler} thisTab={tab} />
             )
         })}
       </div>
